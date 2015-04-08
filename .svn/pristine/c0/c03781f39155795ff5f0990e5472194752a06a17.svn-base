@@ -1,0 +1,67 @@
+
+public class Screen {
+
+	int renderStartPoint;
+	Game game;
+	SpriteSheet spriteSheet;
+	Level level; 
+	int height;
+	int width;
+	int [][] pixels2D;
+	Tile[][] allTileData = new Tile[15][20];
+	public Screen(Game game, SpriteSheet sheet, int height, int width, Level level) {
+		this.game = game; 
+		this.spriteSheet = sheet;
+		this.height = height;
+		this.width = width;
+		this.level = level;
+		pixels2D = new int[height][width];
+		allTileData = level.getAllTileData();
+		
+			
+	}
+	
+	public void render(){
+		/*
+		int[][] tileData = new int[8][8];
+		tileData = spriteSheet.getTileData(4,0);
+		
+		for (int row1=0; row1<height; row1 = row1+8){
+			for (int column1=0; column1<width; column1 = column1+8){		
+				for (int row = row1; row<(row1+8); row++){
+					for(int column = column1; column<(column1+8); column++){
+						pixels2D[row][column] = tileData[row%8][column%8];						
+					}					
+				}				
+			}
+		}		
+		game.converTo1D(pixels2D);*/
+		int xTilePixel = 0;
+		int yTilePixel = 0;
+		int[][] tempTileData = new int[8][8];	
+		
+		for(int i=0; i<15; i++){
+			for(int j=0; j<20; j++){	
+				xTilePixel = allTileData[i][j].getXPos() * 8;				
+				yTilePixel = allTileData[i][j].getYPos() * 8;		
+				tempTileData = allTileData[i][j].getTilePixelData();
+				for (int row = yTilePixel; row<yTilePixel+8; row++){
+					for (int column=xTilePixel; column< xTilePixel+8; column++){
+						pixels2D[row][column] = tempTileData[row%8][column%8];
+				
+
+				
+					}					
+				}	
+					
+			}
+		}
+		
+		game.converTo1D(pixels2D);
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+
+public class Player {
+	int xPos = 80; 
+	int yPos = 60; 
+	int [][] pixelData = new int[16][16];
+	public Player(SpriteSheet sheet, Game game) {		
+		pixelData = sheet.getTileData(0,2,16,16);
+	}
+
+}

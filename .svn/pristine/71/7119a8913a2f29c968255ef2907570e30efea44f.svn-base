@@ -1,0 +1,42 @@
+
+public class Level extends ImageReader {
+	
+	private final int GRASSTILE = ((255<<24)+(81<<16)+(132<<8)+(19));
+	private final int STONETILE = ((255<<24)+(129<<16)+(129<<8)+(129));
+	private final int WATERTILE = ((255<<24)+(6<<16)+(105<<8)+(178));
+	private final int SANDTILE = ((255<<24)+(255<<16)+(202<<8)+(131));
+	Tile [][] tilesFromLvl;
+	
+	
+	public Level(String path, SpriteSheet sheet) {
+		super(path);
+		tilesFromLvl = new Tile[height][width];
+	
+		for (int row=0; row<height; row++){
+			for(int column=0; column<width; column++){
+				if (pixelData[row][column] == GRASSTILE){
+					tilesFromLvl [row][column] = new Tile(1, sheet, column, row, true);
+				}
+				else if (pixelData[row][column] == STONETILE){
+					tilesFromLvl [row][column] = new Tile(2, sheet, column, row, true);
+
+				}
+				else if (pixelData[row][column] == WATERTILE){
+					tilesFromLvl [row][column] = new Tile(3, sheet, column, row, true);
+
+				}
+				else if (pixelData[row][column] == SANDTILE){
+					tilesFromLvl [row][column] = new Tile(4, sheet, column, row, true);
+				}
+			}
+		}
+		
+		
+		
+	}
+	
+	public Tile[][] getAllTileData(){
+		return tilesFromLvl;
+	}
+
+}

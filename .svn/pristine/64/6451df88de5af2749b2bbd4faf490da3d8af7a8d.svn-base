@@ -1,0 +1,17 @@
+
+public class Level extends ImageReader {
+
+	Tile [][] tilesFromLvl;
+	
+	public Level(String path) {
+		super(path);
+		
+		for (int row=0; row<height; row++){
+			for(int column=0; column<width; column++){
+				
+			}
+		}
+		
+	}
+
+}

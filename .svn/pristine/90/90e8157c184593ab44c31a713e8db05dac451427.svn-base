@@ -1,0 +1,10 @@
+
+public class Screen {
+
+	int renderStartPoint;
+	
+	public Screen(Game game, SpriteSheet sheet, int screenHeight, int screenWidth) {
+		
+	}
+
+}
