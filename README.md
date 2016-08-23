@@ -8,4 +8,4 @@ To Run the game, run the following commands. Make sure you have Java8 installed.
 javac *.java
 java GameMain
 ```
-~[example](http://i.imgur.com/GVRfSyj.png)
+![example](http://i.imgur.com/GVRfSyj.png)
