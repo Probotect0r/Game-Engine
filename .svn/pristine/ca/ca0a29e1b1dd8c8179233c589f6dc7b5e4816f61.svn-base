@@ -1,9 +1,0 @@
-
-public class Level extends ImageReader {
-
-	public Level(String path) {
-		super(path);
-		
-	}
-
-}

@@ -1,8 +1,0 @@
-
-public class Screen {
-
-	public Screen(Game game, SpriteSheet sheet, int screenHeight, int screenWidth) {
-		
-	}
-
-}
